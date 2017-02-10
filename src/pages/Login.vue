@@ -54,12 +54,17 @@ export default {
                     console.log('res', data);
                     if (code !== 200) {
 		                this.$notify({
-		                  title: '错误',
-		                  message: msg,
-		                  type: 'error'
+		                    title: '错误',
+		                    message: msg,
+		                    type: 'error'
 		                });
 		            } else {
-		                localStorage.setItem('user', JSON.stringify(user));	
+		                localStorage.setItem('user', JSON.stringify(user));
+		                if (this.$route.query.redirect) {
+		                  this.$router.push({ path: this.$route.query.redirect });
+		                } else {
+		                  this.$router.push({ path: '/table' });
+		                }
 		            }
             	});
             } else {

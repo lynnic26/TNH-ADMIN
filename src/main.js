@@ -6,6 +6,10 @@ import App from './App.vue'
 import Login from './pages/login.vue'
 import Notfound from './pages/Notfound.vue'
 
+// start mock
+import Mock from './mock';
+Mock.bootstrap();
+
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 
